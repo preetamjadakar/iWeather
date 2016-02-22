@@ -2,7 +2,7 @@
 //  WeatherCell.m
 //  iWeather
 //
-//  Created by Pramath Bakliwal's iMac-2 on 20/02/16.
+//  Created by Preetam Jadakar on 20/02/16.
 //  Copyright © 2016 Preetam Jadakar. All rights reserved.
 //
 
@@ -15,10 +15,7 @@
 - (void)awakeFromNib {
     // Initialization code
     self.forecastDataArray = [[NSArray alloc]init];
-    CGRect tableViewFrame = self.forecastTableView.frame;
-    self.forecastTableView.frame = CGRectMake(tableViewFrame.origin.x, tableViewFrame.origin.y, tableViewFrame.size.width, 15*44);
-    [self.forecastTableView setNeedsDisplay];
-    [self layoutIfNeeded];
+
 
 }
 # pragma mark - UITableViewControllerDelegate
@@ -45,8 +42,26 @@
     
 
             cell.dayLabel.text = weather.forecastDate;
+    cell.weatherStatus.text = weather.weatherStatus;
     
-    
+
+
+    //conversion
+    if (/* DISABLES CODE */ (1)) {
+        //supposed to be converted to celcious by default
+        int celciousMin = weather.minTemp - 273.15;
+        int celciousMax = weather.maxTemp - 273.15;
+        cell.minTemp.text = [NSString stringWithFormat:@"%d%@",celciousMin, @"\u00B0"];
+        cell.maxTemp.text = [NSString stringWithFormat:@"%d%@",celciousMax, @"\u00B0"];
+
+    }
+    else
+    {
+        //kelvin by default from API
+        cell.minTemp.text = [NSString stringWithFormat:@"%d%@",(int)weather.minTemp, @"\u00B0"];
+        cell.maxTemp.text = [NSString stringWithFormat:@"%d%@",(int)weather.maxTemp, @"\u00B0"];
+  
+    }
         return cell;
     
 }

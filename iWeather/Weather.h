@@ -11,5 +11,8 @@
 @interface Weather : NSObject
 
 @property(nonatomic)NSString *forecastDate;
+@property(nonatomic)NSString *weatherStatus;
+@property(nonatomic)double minTemp;
+@property(nonatomic)double maxTemp;
 
 @end

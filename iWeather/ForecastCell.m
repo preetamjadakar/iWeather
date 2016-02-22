@@ -2,7 +2,7 @@
 //  ForecastCell.m
 //  iWeather
 //
-//  Created by Pramath Bakliwal's iMac-2 on 20/02/16.
+//  Created by Preetam Jadakar on 20/02/16.
 //  Copyright © 2016 Preetam Jadakar. All rights reserved.
 //
 
@@ -16,7 +16,6 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
     // Configure the view for the selected state
 }
 

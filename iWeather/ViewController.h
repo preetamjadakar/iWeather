@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "WebServiceCommunicator.h"
-@interface ViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate,webserviceCommunicatorDelegate,UIAlertViewDelegate>
+#import <CoreLocation/CoreLocation.h>
+
+@interface ViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate,webserviceCommunicatorDelegate,UIAlertViewDelegate,CLLocationManagerDelegate>
 
 @property (nonatomic)NSMutableArray* dataSource;
 - (IBAction)addCity:(id)sender;
-
+@property (nonatomic)CLLocationManager *locationManager;
+@property (strong, nonatomic) IBOutlet UIPageControl *pageIndicator;
 @end
 

@@ -13,5 +13,7 @@
 
 #define kWeatherCellID @"weatherCellId"
 #define kForecastCellID @"forecastCellId"
+#define PADDING 10
 
+#define kNetworkErrorMessage @"Internet or Wi fi is not available."
 #endif /* Constants_h */

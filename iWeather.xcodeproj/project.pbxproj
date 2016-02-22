@@ -20,6 +20,9 @@
 		775753FC1C78708C00C1E3AB /* WeatherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 775753FB1C78708C00C1E3AB /* WeatherCell.xib */; };
 		775754001C7877D200C1E3AB /* ForecastCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 775753FE1C7877D200C1E3AB /* ForecastCell.m */; };
 		775754011C7877D200C1E3AB /* ForecastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 775753FF1C7877D200C1E3AB /* ForecastCell.xib */; };
+		775754051C78A84600C1E3AB /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 775754041C78A84600C1E3AB /* MBProgressHUD.m */; };
+		775754081C78A86400C1E3AB /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 775754071C78A86400C1E3AB /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		776820381C7ADAEB003A1ADD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 776820371C7ADAEB003A1ADD /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,11 @@
 		775753FD1C7877D200C1E3AB /* ForecastCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForecastCell.h; sourceTree = "<group>"; };
 		775753FE1C7877D200C1E3AB /* ForecastCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastCell.m; sourceTree = "<group>"; };
 		775753FF1C7877D200C1E3AB /* ForecastCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForecastCell.xib; sourceTree = "<group>"; };
+		775754031C78A84600C1E3AB /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		775754041C78A84600C1E3AB /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		775754061C78A86400C1E3AB /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		775754071C78A86400C1E3AB /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		776820371C7ADAEB003A1ADD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				776820381C7ADAEB003A1ADD /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +71,7 @@
 		775753C81C78667100C1E3AB = {
 			isa = PBXGroup;
 			children = (
+				776820371C7ADAEB003A1ADD /* CoreLocation.framework */,
 				775753D31C78667200C1E3AB /* iWeather */,
 				775753D21C78667200C1E3AB /* Products */,
 			);
@@ -140,6 +150,10 @@
 		775754021C789E8300C1E3AB /* ThirdPartyClasses */ = {
 			isa = PBXGroup;
 			children = (
+				775754031C78A84600C1E3AB /* MBProgressHUD.h */,
+				775754041C78A84600C1E3AB /* MBProgressHUD.m */,
+				775754061C78A86400C1E3AB /* Reachability.h */,
+				775754071C78A86400C1E3AB /* Reachability.m */,
 			);
 			name = ThirdPartyClasses;
 			sourceTree = "<group>";
@@ -220,6 +234,8 @@
 				775753DC1C78667200C1E3AB /* ViewController.m in Sources */,
 				775753D91C78667200C1E3AB /* AppDelegate.m in Sources */,
 				775753F61C786BD100C1E3AB /* City.m in Sources */,
+				775754081C78A86400C1E3AB /* Reachability.m in Sources */,
+				775754051C78A84600C1E3AB /* MBProgressHUD.m in Sources */,
 				775753D61C78667200C1E3AB /* main.m in Sources */,
 				775753EF1C786B9100C1E3AB /* WebServiceCommunicator.m in Sources */,
 				775753FA1C78706200C1E3AB /* WeatherCell.m in Sources */,
@@ -334,6 +350,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iWeather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shifter.iWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -345,6 +362,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iWeather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shifter.iWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
