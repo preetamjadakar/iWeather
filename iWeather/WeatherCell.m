@@ -15,8 +15,8 @@
 - (void)awakeFromNib {
     // Initialization code
     self.forecastDataArray = [[NSArray alloc]init];
-
-
+    
+    
 }
 # pragma mark - UITableViewControllerDelegate
 
@@ -25,44 +25,28 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
+    
     return self.forecastDataArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
- 
-        ForecastCell *cell = [tableView dequeueReusableCellWithIdentifier:kForecastCellID];
-        
-        if (cell == nil) {
-            NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"ForecastCell" owner:self options:nil];
-            // Grab a pointer to the first object (presumably the custom cell, as that's all the XIB should contain).
-            cell = [topLevelObjects objectAtIndex:0];
-        }
-     Weather *weather = [self.forecastDataArray objectAtIndex:indexPath.row];
     
-
-            cell.dayLabel.text = weather.forecastDate;
+    ForecastCell *cell = [tableView dequeueReusableCellWithIdentifier:kForecastCellID];
+    
+    if (cell == nil) {
+        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"ForecastCell" owner:self options:nil];
+        // Grab a pointer to the first object (presumably the custom cell, as that's all the XIB should contain).
+        cell = [topLevelObjects objectAtIndex:0];
+    }
+    
+    Weather *weather = [self.forecastDataArray objectAtIndex:indexPath.row];
+    
+    cell.dayLabel.text = weather.forecastDate;
     cell.weatherStatus.text = weather.weatherStatus;
+    cell.minTemp.text = [NSString stringWithFormat:@"%d%@",weather.minTemp, kDegreeUC];
+    cell.maxTemp.text = [NSString stringWithFormat:@"%d%@",weather.maxTemp, kDegreeUC];
     
-
-
-    //conversion
-    if (/* DISABLES CODE */ (1)) {
-        //supposed to be converted to celcious by default
-        int celciousMin = weather.minTemp - 273.15;
-        int celciousMax = weather.maxTemp - 273.15;
-        cell.minTemp.text = [NSString stringWithFormat:@"%d%@",celciousMin, @"\u00B0"];
-        cell.maxTemp.text = [NSString stringWithFormat:@"%d%@",celciousMax, @"\u00B0"];
-
-    }
-    else
-    {
-        //kelvin by default from API
-        cell.minTemp.text = [NSString stringWithFormat:@"%d%@",(int)weather.minTemp, @"\u00B0"];
-        cell.maxTemp.text = [NSString stringWithFormat:@"%d%@",(int)weather.maxTemp, @"\u00B0"];
-  
-    }
-        return cell;
+    return cell;
     
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

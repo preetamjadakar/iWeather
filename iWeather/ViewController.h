@@ -10,7 +10,7 @@
 #import "WebServiceCommunicator.h"
 #import <CoreLocation/CoreLocation.h>
 
-@interface ViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate,webserviceCommunicatorDelegate,UIAlertViewDelegate,CLLocationManagerDelegate>
+@interface ViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate,UIAlertViewDelegate,CLLocationManagerDelegate>
 
 @property (nonatomic)NSMutableArray* dataSource;
 - (IBAction)addCity:(id)sender;

@@ -7,11 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "Weather.h"
 @interface City : NSObject
 @property(nonatomic)NSString *cityName;
 
 //array to hold weather forcast objects
 @property(nonatomic)NSArray *forecastArray;
+
+//for the city's today weather
+@property(nonatomic)Weather *todayWeather;
+
 
 @end

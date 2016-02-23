@@ -18,26 +18,19 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Sv9-ly-gCU">
+                                <rect key="frame" x="-4" y="0.0" width="328" height="504"/>
+                            </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="inJ-FH-pE4">
                                 <rect key="frame" x="-4" y="0.0" width="328" height="504"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7Ic-mb-u0K">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gxI-8F-4Ky">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="A18-3c-FV8"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="oRe-SJ-dOR"/>
@@ -49,7 +42,7 @@
                                     <constraint firstAttribute="height" constant="37" id="ToQ-0k-bdP"/>
                                     <constraint firstAttribute="width" constant="280" id="g1A-gl-siz"/>
                                 </constraints>
-                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="pageIndicatorTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="currentPageIndicatorTintColor" red="1" green="0.50588235290000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                             </pageControl>
                         </subviews>
@@ -57,8 +50,12 @@
                         <constraints>
                             <constraint firstItem="B1m-k2-gRR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AiQ-TN-OG3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="inJ-FH-pE4" secondAttribute="trailing" constant="-20" id="Deg-fe-gSw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Sv9-ly-gCU" secondAttribute="trailing" constant="-20" id="EKa-g5-Nz9"/>
                             <constraint firstItem="inJ-FH-pE4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="OID-n3-yWh"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Sv9-ly-gCU" secondAttribute="bottom" id="QIG-hx-g6M"/>
+                            <constraint firstItem="Sv9-ly-gCU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="WF5-ef-emY"/>
                             <constraint firstItem="inJ-FH-pE4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="eR6-vg-JbO"/>
+                            <constraint firstItem="Sv9-ly-gCU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="f5Q-ed-icd"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="B1m-k2-gRR" secondAttribute="bottom" constant="2" id="jXG-Tr-nPg"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="inJ-FH-pE4" secondAttribute="bottom" id="nk3-NX-D8O"/>
                         </constraints>
@@ -99,4 +96,7 @@
             <point key="canvasLocation" x="146" y="406"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background" width="1200" height="900"/>
+    </resources>
 </document>

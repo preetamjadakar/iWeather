@@ -10,11 +10,6 @@
 #import "Weather.h"
 #import "City.h"
 #import "Reachability.h"
-@protocol webserviceCommunicatorDelegate
--(void)didRecieveResponse:(City *)city;
--(void)didRecieveReceiveError:(NSString*)errorMessage;
-
-@end
 
 
 @interface WebServiceCommunicator : NSObject
@@ -22,10 +17,10 @@
 // This class is intended to be used as a singleton.
 + (WebServiceCommunicator *)sharedInstance;
 
--(void)fetchForcastForCity:(id)cityNameOrCLLocation;
-@property(weak,nonatomic) id<webserviceCommunicatorDelegate> delegate;
+//to check if internet connection is available
 -(BOOL)isNetworkConnection;
 
+//method with completion handle to fetch weather data asynchronously
 -(void)fetchForcastDataForCity:(id)cityNameOrCLLocation andCompletionHandler:(void(^)(City* cityObject, NSError *error))completionHandler;
 
 @end

@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -18,18 +17,27 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LyJ-ul-ZYh">
                         <rect key="frame" x="8" y="11" width="114" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="u8A-wV-zsS"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xbQ-Y9-J2x">
                         <rect key="frame" x="274" y="11" width="38" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="ezf-kN-3Qh"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.35642527810549385" green="0.41870537705636568" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fwb-BL-uLF">
                         <rect key="frame" x="216" y="11" width="38" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="mLe-Bo-hFR"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -38,6 +46,7 @@
                         <rect key="frame" x="145" y="11" width="63" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="63" id="FNr-Cb-h2J"/>
+                            <constraint firstAttribute="height" constant="21" id="bCY-nH-IzN"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -45,21 +54,18 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="fwb-BL-uLF" firstAttribute="firstBaseline" secondItem="xbQ-Y9-J2x" secondAttribute="firstBaseline" id="9J3-iD-YV6"/>
-                    <constraint firstItem="LyJ-ul-ZYh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="3" id="Arf-Sz-vlp"/>
-                    <constraint firstItem="fwb-BL-uLF" firstAttribute="baseline" secondItem="aEQ-fh-IH4" secondAttribute="baseline" id="DF6-vA-gHF"/>
+                    <constraint firstItem="aEQ-fh-IH4" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="3Uy-9M-Mq1"/>
+                    <constraint firstItem="xbQ-Y9-J2x" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="C3L-cW-Ghn"/>
                     <constraint firstItem="aEQ-fh-IH4" firstAttribute="leading" secondItem="LyJ-ul-ZYh" secondAttribute="trailing" constant="23" id="JFd-XX-Q2W"/>
+                    <constraint firstItem="LyJ-ul-ZYh" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="K5i-t7-oYu"/>
                     <constraint firstItem="xbQ-Y9-J2x" firstAttribute="leading" secondItem="fwb-BL-uLF" secondAttribute="trailing" constant="20" id="Nu9-zd-03a"/>
-                    <constraint firstItem="aEQ-fh-IH4" firstAttribute="baseline" secondItem="LyJ-ul-ZYh" secondAttribute="baseline" id="OA0-Qv-XoP"/>
                     <constraint firstItem="LyJ-ul-ZYh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="SX5-5E-zaw"/>
                     <constraint firstItem="xbQ-Y9-J2x" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="gbH-bl-Ji6"/>
                     <constraint firstItem="fwb-BL-uLF" firstAttribute="leading" secondItem="aEQ-fh-IH4" secondAttribute="trailing" constant="8" symbolic="YES" id="kvQ-UI-EYb"/>
-                    <constraint firstItem="xbQ-Y9-J2x" firstAttribute="baseline" secondItem="fwb-BL-uLF" secondAttribute="baseline" id="ox0-Xw-2iT"/>
-                    <constraint firstItem="LyJ-ul-ZYh" firstAttribute="firstBaseline" secondItem="aEQ-fh-IH4" secondAttribute="firstBaseline" id="uHc-AB-LJZ"/>
                     <constraint firstItem="fwb-BL-uLF" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="zJw-n5-xru"/>
-                    <constraint firstItem="fwb-BL-uLF" firstAttribute="firstBaseline" secondItem="aEQ-fh-IH4" secondAttribute="firstBaseline" id="zcR-Nc-elX"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="dayLabel" destination="LyJ-ul-ZYh" id="ajL-3W-XKU"/>
                 <outlet property="maxTemp" destination="fwb-BL-uLF" id="ISc-vt-a0A"/>

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+//used to show forcast data in tableview 
 @interface ForecastCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UILabel *dayLabel;

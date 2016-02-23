@@ -13,7 +13,12 @@
 
 #define kWeatherCellID @"weatherCellId"
 #define kForecastCellID @"forecastCellId"
+
+#define kDegreeUC @"\u00B0"
+
+
 #define PADDING 10
+#define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 
 #define kNetworkErrorMessage @"Internet or Wi fi is not available."
 #endif /* Constants_h */

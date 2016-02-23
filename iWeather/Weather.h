@@ -12,7 +12,10 @@
 
 @property(nonatomic)NSString *forecastDate;
 @property(nonatomic)NSString *weatherStatus;
-@property(nonatomic)double minTemp;
-@property(nonatomic)double maxTemp;
+@property(nonatomic)NSString *weatherDescription;
+
+@property(nonatomic)int minTemp;
+@property(nonatomic)int maxTemp;
+@property(nonatomic)int currentTemp;
 
 @end
