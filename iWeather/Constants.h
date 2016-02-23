@@ -9,6 +9,7 @@
 #ifndef Constants_h
 #define Constants_h
 
+//please try with your API key to ignore the fetch limit(quota) issues
 #define API_KEY @"9235d6c910d198de837d69ba44372251"
 
 #define kWeatherCellID @"weatherCellId"

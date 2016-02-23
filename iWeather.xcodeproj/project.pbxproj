@@ -23,6 +23,9 @@
 		775754051C78A84600C1E3AB /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 775754041C78A84600C1E3AB /* MBProgressHUD.m */; };
 		775754081C78A86400C1E3AB /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 775754071C78A86400C1E3AB /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		776820381C7ADAEB003A1ADD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 776820371C7ADAEB003A1ADD /* CoreLocation.framework */; };
+		77C06DC81C7CA9C40053BA95 /* Screen Shot 2016-02-23 at 7.47.23 pm.png in Resources */ = {isa = PBXBuildFile; fileRef = 77C06DC51C7CA9C40053BA95 /* Screen Shot 2016-02-23 at 7.47.23 pm.png */; };
+		77C06DC91C7CA9C40053BA95 /* Screen Shot 2016-02-23 at 7.47.36 pm.png in Resources */ = {isa = PBXBuildFile; fileRef = 77C06DC61C7CA9C40053BA95 /* Screen Shot 2016-02-23 at 7.47.36 pm.png */; };
+		77C06DCA1C7CA9C40053BA95 /* Screen Shot 2016-02-23 at 7.47.46 pm.png in Resources */ = {isa = PBXBuildFile; fileRef = 77C06DC71C7CA9C40053BA95 /* Screen Shot 2016-02-23 at 7.47.46 pm.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +57,9 @@
 		775754061C78A86400C1E3AB /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		775754071C78A86400C1E3AB /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		776820371C7ADAEB003A1ADD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		77C06DC51C7CA9C40053BA95 /* Screen Shot 2016-02-23 at 7.47.23 pm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2016-02-23 at 7.47.23 pm.png"; sourceTree = "<group>"; };
+		77C06DC61C7CA9C40053BA95 /* Screen Shot 2016-02-23 at 7.47.36 pm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2016-02-23 at 7.47.36 pm.png"; sourceTree = "<group>"; };
+		77C06DC71C7CA9C40053BA95 /* Screen Shot 2016-02-23 at 7.47.46 pm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2016-02-23 at 7.47.46 pm.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +107,7 @@
 				775753E21C78667300C1E3AB /* LaunchScreen.storyboard */,
 				775753E51C78667300C1E3AB /* Info.plist */,
 				775753D41C78667200C1E3AB /* Supporting Files */,
+				77C06DC41C7CA9A90053BA95 /* ScreenShots */,
 			);
 			path = iWeather;
 			sourceTree = "<group>";
@@ -156,6 +163,16 @@
 				775754071C78A86400C1E3AB /* Reachability.m */,
 			);
 			name = ThirdPartyClasses;
+			sourceTree = "<group>";
+		};
+		77C06DC41C7CA9A90053BA95 /* ScreenShots */ = {
+			isa = PBXGroup;
+			children = (
+				77C06DC51C7CA9C40053BA95 /* Screen Shot 2016-02-23 at 7.47.23 pm.png */,
+				77C06DC61C7CA9C40053BA95 /* Screen Shot 2016-02-23 at 7.47.36 pm.png */,
+				77C06DC71C7CA9C40053BA95 /* Screen Shot 2016-02-23 at 7.47.46 pm.png */,
+			);
+			name = ScreenShots;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,8 +235,11 @@
 			files = (
 				775753FC1C78708C00C1E3AB /* WeatherCell.xib in Resources */,
 				775753E41C78667300C1E3AB /* LaunchScreen.storyboard in Resources */,
+				77C06DC91C7CA9C40053BA95 /* Screen Shot 2016-02-23 at 7.47.36 pm.png in Resources */,
 				775754011C7877D200C1E3AB /* ForecastCell.xib in Resources */,
 				775753E11C78667200C1E3AB /* Assets.xcassets in Resources */,
+				77C06DCA1C7CA9C40053BA95 /* Screen Shot 2016-02-23 at 7.47.46 pm.png in Resources */,
+				77C06DC81C7CA9C40053BA95 /* Screen Shot 2016-02-23 at 7.47.23 pm.png in Resources */,
 				775753DF1C78667200C1E3AB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
