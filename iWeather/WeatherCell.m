@@ -15,8 +15,6 @@
 - (void)awakeFromNib {
     // Initialization code
     self.forecastDataArray = [[NSArray alloc]init];
-    
-    
 }
 # pragma mark - UITableViewControllerDelegate
 
@@ -52,5 +50,11 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 44.;
+}
+- (IBAction)removeCell:(id)sender {
+    
+    if ([self.delegate respondsToSelector:@selector(removeButtonClicked:)]) {
+        [self.delegate removeButtonClicked:self];
+    }
 }
 @end

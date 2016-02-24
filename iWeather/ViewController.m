@@ -8,7 +8,6 @@
 
 #import "ViewController.h"
 #import "Constants.h"
-#import "WeatherCell.h"
 #import "WebServiceCommunicator.h"
 #import "MBProgressHUD.h"
 
@@ -43,6 +42,10 @@
     [self.weatheCollectionView setCollectionViewLayout:layout];
     
     //fetch users current location
+    [self locationManagerConfiguration];
+}
+-(void)locationManagerConfiguration
+{
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
     
@@ -53,13 +56,12 @@
             if([[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationWhenInUseUsageDescription"]) {
                 [self.locationManager  requestWhenInUseAuthorization];
             } else {
-                NSLog(@"Info.plist does not contain NSLocationAlwaysUsageDescription or NSLocationWhenInUseUsageDescription");
+                NSLog(@"Info.plist does not contain NSLocationWhenInUseUsageDescription");
             }
         }
     }
     [self.locationManager startUpdatingLocation];
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -73,22 +75,15 @@
     if (location)
     {
         //if valid location found
-        if ([[WebServiceCommunicator sharedInstance]isNetworkConnection]) {
             [manager stopUpdatingLocation];
             self.locationManager = nil;
 
-            [self.activityIndicatorView show:YES];
             [self.activityIndicatorView setLabelText:@"fetching current weather..."];
             
-            //can use cityname(rever geocoding) but lat long is user for the more accurate location result
+            //can use cityname(using reverse geocoding) but lat long is used for the more accurate location specific result
+            //fortunately lat-long specific API is available
             [self fetchData:location];
-            
-        }
-        else
-        {
-            [[[UIAlertView alloc]
-              initWithTitle:@"Error" message:kNetworkErrorMessage delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
-        }
+     
         
     }
     
@@ -140,6 +135,7 @@
     WeatherCell *cell =
     (WeatherCell *)[self.weatheCollectionView dequeueReusableCellWithReuseIdentifier:kWeatherCellID
                                                                         forIndexPath:indexPath];
+    cell.delegate = self;
     
     [self addSomeBorderToCell:cell];
     City *city = [self.dataSource objectAtIndex:indexPath.row];
@@ -150,7 +146,10 @@
     cell.currentTemp.text = [NSString stringWithFormat:@"%d%@",city.todayWeather.minTemp, kDegreeUC];
     
     cell.forecastDataArray = city.forecastArray;
+    
+    // to refresh table in collectionview cell
     [cell.forecastTableView reloadData];
+    
     return cell;
     
 }
@@ -172,7 +171,6 @@
     CGPoint visiblePoint = CGPointMake(CGRectGetMidX(visibleRect), CGRectGetMidY(visibleRect));
     NSIndexPath *visibleIndexPath = [self.weatheCollectionView indexPathForItemAtPoint:visiblePoint];
     self.pageIndicator.currentPage = visibleIndexPath.item;
-    
 }
 
 
@@ -188,51 +186,8 @@
     }
     return NO;
 }
--(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (alertView.tag==101) {
-        if (buttonIndex==1) {
-            
-            //done
-            if(IS_OS_8_OR_LATER)
-                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
-            else
-                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"prefs:root=LOCATION_SERVICES"]];
-            
-            
-        }
-        else
-        {
-            //cancel
-        }
-        
-    }
-    else   if (alertView.tag==100) {
-        if (buttonIndex==1) {
-            //done
-            
-            if ([[WebServiceCommunicator sharedInstance]isNetworkConnection]) {
-                [self.activityIndicatorView show:YES];
-                [self.activityIndicatorView setLabelText:nil];
 
-                UITextField *textInput = [alertView textFieldAtIndex:0];
-                [self fetchData:textInput.text];
-                
-            }
-            else
-            {
-                [[[UIAlertView alloc]
-                  initWithTitle:@"Error" message:kNetworkErrorMessage delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
-            }
-            
-            
-        }
-        else
-        {
-            //cancel
-        }
-    }
-}
+#pragma mark Take City name input
 - (IBAction)addCity:(id)sender {
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
@@ -246,11 +201,58 @@
     
 }
 
-#pragma mark Webservice Communicator Delegate Responses
+#pragma mark UIAlertView Delegate
 
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (alertView.tag==101) {
+        if (buttonIndex==1) {
+            
+            //done
+            if(IS_OS_8_OR_LATER)
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+            else
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"prefs:root=LOCATION_SERVICES"]];
+        }
+        else
+        {
+            //cancel
+        }
+    }
+    else   if (alertView.tag==100) {
+        if (buttonIndex==1) {
+            //done
+            [self.activityIndicatorView setLabelText:nil];
+            
+            UITextField *textInput = [alertView textFieldAtIndex:0];
+            [self fetchData:textInput.text];
+        }
+        else
+        {
+            //cancel
+        }
+    }
+}
+#pragma mark WeatherCell Delegate 
+-(void)removeButtonClicked:(WeatherCell *)cell
+{
+    //get the respective indexpath object
+    NSIndexPath *clickedCellIndexPath = [self.weatheCollectionView indexPathForCell:cell];
+    //manage datasource
+    [self.dataSource removeObjectAtIndex:clickedCellIndexPath.item];
+    self.pageIndicator.numberOfPages = self.dataSource.count;
+    //remove the cell and reload collectionview
+    [self.weatheCollectionView deleteItemsAtIndexPaths:@[clickedCellIndexPath]];
+    [self.weatheCollectionView reloadData];
+}
+
+#pragma mark WebserviceCommunicator Delegate Response
 //just to avaid code redundency, made it reusable
 -(void)fetchData:(id)cityNameOrCLLocation
 {
+    if ([[WebServiceCommunicator sharedInstance]isNetworkConnection]) {
+        [self.activityIndicatorView show:YES];
+
     [[WebServiceCommunicator sharedInstance]fetchForcastDataForCity:cityNameOrCLLocation andCompletionHandler:^(City *cityObject, NSError *error) {
         
         if (error == nil) {
@@ -275,6 +277,12 @@
         }
         
     }];
+}
+    else
+    {
+        [[[UIAlertView alloc]
+          initWithTitle:@"Error" message:kNetworkErrorMessage delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+    }
     
 }
 @end

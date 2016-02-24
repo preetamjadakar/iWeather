@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		774FB8A61C7D787200F15CE7 /* Screen Shot 2016-02-23 at 7.47.23 pm.png in Resources */ = {isa = PBXBuildFile; fileRef = 774FB8A31C7D787200F15CE7 /* Screen Shot 2016-02-23 at 7.47.23 pm.png */; };
+		774FB8A71C7D787200F15CE7 /* Screen Shot 2016-02-23 at 7.47.36 pm.png in Resources */ = {isa = PBXBuildFile; fileRef = 774FB8A41C7D787200F15CE7 /* Screen Shot 2016-02-23 at 7.47.36 pm.png */; };
+		774FB8A81C7D787200F15CE7 /* Screen Shot 2016-02-23 at 7.47.46 pm.png in Resources */ = {isa = PBXBuildFile; fileRef = 774FB8A51C7D787200F15CE7 /* Screen Shot 2016-02-23 at 7.47.46 pm.png */; };
 		775753D61C78667200C1E3AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 775753D51C78667200C1E3AB /* main.m */; };
 		775753D91C78667200C1E3AB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 775753D81C78667200C1E3AB /* AppDelegate.m */; };
 		775753DC1C78667200C1E3AB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 775753DB1C78667200C1E3AB /* ViewController.m */; };
@@ -23,12 +26,12 @@
 		775754051C78A84600C1E3AB /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 775754041C78A84600C1E3AB /* MBProgressHUD.m */; };
 		775754081C78A86400C1E3AB /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 775754071C78A86400C1E3AB /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		776820381C7ADAEB003A1ADD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 776820371C7ADAEB003A1ADD /* CoreLocation.framework */; };
-		77C06DC81C7CA9C40053BA95 /* Screen Shot 2016-02-23 at 7.47.23 pm.png in Resources */ = {isa = PBXBuildFile; fileRef = 77C06DC51C7CA9C40053BA95 /* Screen Shot 2016-02-23 at 7.47.23 pm.png */; };
-		77C06DC91C7CA9C40053BA95 /* Screen Shot 2016-02-23 at 7.47.36 pm.png in Resources */ = {isa = PBXBuildFile; fileRef = 77C06DC61C7CA9C40053BA95 /* Screen Shot 2016-02-23 at 7.47.36 pm.png */; };
-		77C06DCA1C7CA9C40053BA95 /* Screen Shot 2016-02-23 at 7.47.46 pm.png in Resources */ = {isa = PBXBuildFile; fileRef = 77C06DC71C7CA9C40053BA95 /* Screen Shot 2016-02-23 at 7.47.46 pm.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		774FB8A31C7D787200F15CE7 /* Screen Shot 2016-02-23 at 7.47.23 pm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2016-02-23 at 7.47.23 pm.png"; sourceTree = "<group>"; };
+		774FB8A41C7D787200F15CE7 /* Screen Shot 2016-02-23 at 7.47.36 pm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2016-02-23 at 7.47.36 pm.png"; sourceTree = "<group>"; };
+		774FB8A51C7D787200F15CE7 /* Screen Shot 2016-02-23 at 7.47.46 pm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2016-02-23 at 7.47.46 pm.png"; sourceTree = "<group>"; };
 		775753D11C78667200C1E3AB /* iWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		775753D51C78667200C1E3AB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		775753D71C78667200C1E3AB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -57,9 +60,6 @@
 		775754061C78A86400C1E3AB /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		775754071C78A86400C1E3AB /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		776820371C7ADAEB003A1ADD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		77C06DC51C7CA9C40053BA95 /* Screen Shot 2016-02-23 at 7.47.23 pm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2016-02-23 at 7.47.23 pm.png"; sourceTree = "<group>"; };
-		77C06DC61C7CA9C40053BA95 /* Screen Shot 2016-02-23 at 7.47.36 pm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2016-02-23 at 7.47.36 pm.png"; sourceTree = "<group>"; };
-		77C06DC71C7CA9C40053BA95 /* Screen Shot 2016-02-23 at 7.47.46 pm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2016-02-23 at 7.47.46 pm.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,9 +77,9 @@
 		775753C81C78667100C1E3AB = {
 			isa = PBXGroup;
 			children = (
-				776820371C7ADAEB003A1ADD /* CoreLocation.framework */,
 				775753D31C78667200C1E3AB /* iWeather */,
 				775753D21C78667200C1E3AB /* Products */,
+				776820371C7ADAEB003A1ADD /* CoreLocation.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -168,9 +168,9 @@
 		77C06DC41C7CA9A90053BA95 /* ScreenShots */ = {
 			isa = PBXGroup;
 			children = (
-				77C06DC51C7CA9C40053BA95 /* Screen Shot 2016-02-23 at 7.47.23 pm.png */,
-				77C06DC61C7CA9C40053BA95 /* Screen Shot 2016-02-23 at 7.47.36 pm.png */,
-				77C06DC71C7CA9C40053BA95 /* Screen Shot 2016-02-23 at 7.47.46 pm.png */,
+				774FB8A31C7D787200F15CE7 /* Screen Shot 2016-02-23 at 7.47.23 pm.png */,
+				774FB8A41C7D787200F15CE7 /* Screen Shot 2016-02-23 at 7.47.36 pm.png */,
+				774FB8A51C7D787200F15CE7 /* Screen Shot 2016-02-23 at 7.47.46 pm.png */,
 			);
 			name = ScreenShots;
 			sourceTree = "<group>";
@@ -235,11 +235,11 @@
 			files = (
 				775753FC1C78708C00C1E3AB /* WeatherCell.xib in Resources */,
 				775753E41C78667300C1E3AB /* LaunchScreen.storyboard in Resources */,
-				77C06DC91C7CA9C40053BA95 /* Screen Shot 2016-02-23 at 7.47.36 pm.png in Resources */,
+				774FB8A71C7D787200F15CE7 /* Screen Shot 2016-02-23 at 7.47.36 pm.png in Resources */,
 				775754011C7877D200C1E3AB /* ForecastCell.xib in Resources */,
 				775753E11C78667200C1E3AB /* Assets.xcassets in Resources */,
-				77C06DCA1C7CA9C40053BA95 /* Screen Shot 2016-02-23 at 7.47.46 pm.png in Resources */,
-				77C06DC81C7CA9C40053BA95 /* Screen Shot 2016-02-23 at 7.47.23 pm.png in Resources */,
+				774FB8A81C7D787200F15CE7 /* Screen Shot 2016-02-23 at 7.47.46 pm.png in Resources */,
+				774FB8A61C7D787200F15CE7 /* Screen Shot 2016-02-23 at 7.47.23 pm.png in Resources */,
 				775753DF1C78667200C1E3AB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

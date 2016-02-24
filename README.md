@@ -1,5 +1,5 @@
 # iWeather
-## Synopsis
+##Synopsis
 
 Application uses the http://api.openweathermap.org APIs to fetch the weather data.
 
@@ -22,7 +22,7 @@ Application uses the http://api.openweathermap.org APIs to fetch the weather dat
 
 ![alt tag](https://github.com/preetamjadakar/iWeather/blob/master/iWeather/Screen%20Shot%202016-02-23%20at%207.47.46%20pm.png)
 
-## Motivation
+##Motivation
 
 1.Adding UITableView in UICollectionViewCell
 
@@ -31,3 +31,7 @@ Application uses the http://api.openweathermap.org APIs to fetch the weather dat
 1.Apple’s Reachability class
 
 2.MBProgressHUD
+
+##Disclaimer:
+
+Results are solely depends on http://api.openweathermap.org APIs

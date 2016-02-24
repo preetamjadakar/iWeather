@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "WebServiceCommunicator.h"
 #import <CoreLocation/CoreLocation.h>
-
-@interface ViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate,UIAlertViewDelegate,CLLocationManagerDelegate>
+#import "WeatherCell.h"
+@interface ViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate,UIAlertViewDelegate,CLLocationManagerDelegate,WeatherCellProtocol>
 
 @property (nonatomic)NSMutableArray* dataSource;
 - (IBAction)addCity:(id)sender;

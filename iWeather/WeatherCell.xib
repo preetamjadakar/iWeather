@@ -23,7 +23,7 @@
                                     <constraint firstAttribute="width" priority="750" constant="288" id="xhY-Qb-Gyv"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qpR-wa-ua2">
@@ -45,7 +45,7 @@
                                     <constraint firstAttribute="height" constant="60" id="ow3-BI-nC7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="52"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R9W-sH-9TC">
@@ -70,7 +70,7 @@
                                     <constraint firstAttribute="width" constant="25" id="Ble-CJ-0ok"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="up" translatesAutoresizingMaskIntoConstraints="NO" id="BlK-41-O37">
@@ -87,6 +87,17 @@
                                     <constraint firstAttribute="width" constant="17" id="UPG-XM-FoY"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSa-w5-jDz">
+                                <rect key="frame" x="255" y="0.0" width="49" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="enP-dn-evv"/>
+                                    <constraint firstAttribute="width" constant="49" id="nOo-Jq-a9y"/>
+                                </constraints>
+                                <state key="normal" image="close"/>
+                                <connections>
+                                    <action selector="removeCell:" destination="4yh-xM-uiU" eventType="touchUpInside" id="IKF-bn-EdU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -101,9 +112,11 @@
                             <constraint firstItem="BlK-41-O37" firstAttribute="leading" secondItem="Dqg-Nw-HiO" secondAttribute="leading" constant="8" id="JcE-2e-sZO"/>
                             <constraint firstItem="0lh-tF-CYX" firstAttribute="leading" secondItem="Dqg-Nw-HiO" secondAttribute="leading" constant="8" id="MZo-Bx-sbb"/>
                             <constraint firstItem="OvZ-pn-QIR" firstAttribute="leading" secondItem="Dqg-Nw-HiO" secondAttribute="leading" constant="8" id="N7a-aO-gqE"/>
+                            <constraint firstItem="hSa-w5-jDz" firstAttribute="top" secondItem="Dqg-Nw-HiO" secondAttribute="top" id="OHG-bd-HZR"/>
                             <constraint firstItem="vRN-KX-W8I" firstAttribute="centerY" secondItem="R9W-sH-9TC" secondAttribute="centerY" id="Rmu-FY-ZP2"/>
                             <constraint firstItem="uLl-oa-2lJ" firstAttribute="top" secondItem="V9Z-1q-jl6" secondAttribute="bottom" constant="21" id="Vyn-Ui-hoT"/>
                             <constraint firstItem="qpR-wa-ua2" firstAttribute="top" secondItem="OvZ-pn-QIR" secondAttribute="bottom" constant="8" id="WAb-fA-ggT"/>
+                            <constraint firstAttribute="trailing" secondItem="hSa-w5-jDz" secondAttribute="trailing" id="b9f-Bs-lv0"/>
                             <constraint firstItem="uLl-oa-2lJ" firstAttribute="leading" secondItem="BlK-41-O37" secondAttribute="trailing" constant="2" id="d8z-rk-IBf"/>
                             <constraint firstItem="0lh-tF-CYX" firstAttribute="top" secondItem="uLl-oa-2lJ" secondAttribute="bottom" constant="1" id="ed1-Lh-3gl"/>
                             <constraint firstItem="R9W-sH-9TC" firstAttribute="baseline" secondItem="uLl-oa-2lJ" secondAttribute="baseline" id="mwm-rK-jE3"/>
@@ -139,6 +152,7 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="close" width="64" height="64"/>
         <image name="down" width="32" height="32"/>
         <image name="up" width="32" height="32"/>
     </resources>
