@@ -79,7 +79,6 @@
 			children = (
 				775753D31C78667200C1E3AB /* iWeather */,
 				775753D21C78667200C1E3AB /* Products */,
-				776820371C7ADAEB003A1ADD /* CoreLocation.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,6 +116,7 @@
 			children = (
 				775753D51C78667200C1E3AB /* main.m */,
 				775753EB1C786A9600C1E3AB /* Constants.h */,
+				776820371C7ADAEB003A1ADD /* CoreLocation.framework */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -206,7 +206,6 @@
 				TargetAttributes = {
 					775753D01C78667200C1E3AB = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 367BCS6SGL;
 					};
 				};
 			};
@@ -376,7 +375,7 @@
 				INFOPLIST_FILE = iWeather/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.empower.iWeather;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shifter.iWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -389,7 +388,7 @@
 				INFOPLIST_FILE = iWeather/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.empower.iWeather;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shifter.iWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
