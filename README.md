@@ -1,12 +1,16 @@
 # iWeather
 ##Synopsis
 
-Application uses the http://api.openweathermap.org APIs to fetch the weather data.
+Application uses the http://openweathermap.org APIs to fetch the weather data.
 
 1.Upon launch it will display the weather of user’s current location.
 
 2.One can see weather of any location by tapping “+” and entering location.
 
+##Disclaimer:
+
+1.Results are solely depends on http://api.openweathermap.org APIs
+2.Currently temperature shown in bold is the "day" temperature parameter of current date from API
 
 ##Some screen shots:
 
@@ -32,6 +36,3 @@ Application uses the http://api.openweathermap.org APIs to fetch the weather dat
 
 2.MBProgressHUD
 
-##Disclaimer:
-
-Results are solely depends on http://api.openweathermap.org APIs
