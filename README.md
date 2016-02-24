@@ -10,6 +10,7 @@ Application uses the http://openweathermap.org APIs to fetch the weather data.
 ##Disclaimer:
 
 1.Results are solely depends on http://api.openweathermap.org APIs
+
 2.Currently temperature shown in bold is the "day" temperature parameter of current date from API
 
 ##Some screen shots:
