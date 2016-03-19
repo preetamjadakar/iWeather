@@ -59,7 +59,6 @@
         }
     }
     [self.locationManager startUpdatingLocation];
-    [self fetchData:@"Pune"];
 }
 -(void)locationManagerConfiguration
 {
