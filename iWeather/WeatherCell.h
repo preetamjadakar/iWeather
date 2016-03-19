@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "Constants.h"
-
 //forward declaration of current class
 @class WeatherCell;
 
@@ -26,15 +25,13 @@
 //to hold list of weather forcast data
 @property (nonatomic)NSArray* forecastDataArray;
 
-@property (strong, nonatomic) IBOutlet UILabel *cityName;
-@property (strong, nonatomic) IBOutlet UILabel *maxTemp;
-@property (strong, nonatomic) IBOutlet UILabel *minTemp;
-@property (strong, nonatomic) IBOutlet UILabel *currentTemp;
-@property (strong, nonatomic) IBOutlet UILabel *weatherDiscription;
 
 //close button action
 - (IBAction)removeCell:(id)sender;
 
 //protocol's delegate
 @property(weak)id<WeatherCellProtocol>delegate;
+
+@property(nonatomic)NSString *cityName;
+
 @end

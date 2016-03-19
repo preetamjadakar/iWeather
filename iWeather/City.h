@@ -14,7 +14,7 @@
 //array to hold weather forcast objects
 @property(nonatomic)NSArray *forecastArray;
 
-//for the city's today weather
+//for the city's today weather (if reuired)
 @property(nonatomic)Weather *todayWeather;
 
 

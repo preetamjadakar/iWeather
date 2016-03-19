@@ -9,23 +9,12 @@ Application uses the http://openweathermap.org APIs to fetch the weather data.
 
 ##Disclaimer:
 
-1.Results are solely depends on http://api.openweathermap.org APIs
+Results are solely depends on http://api.openweathermap.org APIs
 
-2.Currently temperature shown in bold is the "day" temperature parameter of current date from API
 
 ##Some screen shots:
 
-1.For current location:
-
-![alt tag](https://github.com/preetamjadakar/iWeather/blob/master/iWeather/Screen%20Shot%202016-02-23%20at%207.47.23%20pm.png)
-
-2.For adding custom location/city:
-
-![alt tag](https://github.com/preetamjadakar/iWeather/blob/master/iWeather/Screen%20Shot%202016-02-23%20at%207.47.36%20pm.png)
-
-3.After fetching location:
-
-![alt tag](https://github.com/preetamjadakar/iWeather/blob/master/iWeather/Screen%20Shot%202016-02-23%20at%207.47.46%20pm.png)
+![alt tag](https://github.com/preetamjadakar/iWeather/blob/master/iWeather/Snip20160319_1.png)
 
 ##Motivation
 
@@ -36,4 +25,11 @@ Application uses the http://openweathermap.org APIs to fetch the weather data.
 1.Apple’s Reachability class
 
 2.MBProgressHUD
+
+## Build Requirements
++ Xcode 7 or later
++ iOS 9.0 SDK or later
+
+## Runtime Requirements
++ iOS 7.0 or later
 

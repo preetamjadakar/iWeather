@@ -43,6 +43,23 @@
     
     //fetch users current location
     [self locationManagerConfiguration];
+    
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    
+    if(IS_OS_8_OR_LATER){
+        NSUInteger code = [CLLocationManager authorizationStatus];
+        if (code == kCLAuthorizationStatusNotDetermined && ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)] || [self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])) {
+            // location manager config for iOS 8 or later.
+            if([[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationWhenInUseUsageDescription"]) {
+                [self.locationManager  requestWhenInUseAuthorization];
+            } else {
+                NSLog(@"Info.plist does not contain NSLocationWhenInUseUsageDescription");
+            }
+        }
+    }
+    [self.locationManager startUpdatingLocation];
+    [self fetchData:@"Pune"];
 }
 -(void)locationManagerConfiguration
 {
@@ -75,15 +92,15 @@
     if (location)
     {
         //if valid location found
-            [manager stopUpdatingLocation];
-            self.locationManager = nil;
-
-            [self.activityIndicatorView setLabelText:@"fetching current weather..."];
-            
-            //can use cityname(using reverse geocoding) but lat long is used for the more accurate location specific result
-            //fortunately lat-long specific API is available
-            [self fetchData:location];
-     
+        [manager stopUpdatingLocation];
+        self.locationManager = nil;
+        
+        [self.activityIndicatorView setLabelText:@"fetching current weather..."];
+        
+        //can use cityname(using reverse geocoding) but lat long is used for the more accurate location specific result
+        //fortunately lat-long specific API is available
+        [self fetchData:location];
+        
         
     }
     
@@ -95,7 +112,7 @@
         
         // We handle CoreLocation-related errors here
         switch ([error code]) {
-
+                
             case kCLErrorDenied:
                 //access denied when user asked by iOS
             {
@@ -139,12 +156,8 @@
     
     [self addSomeBorderToCell:cell];
     City *city = [self.dataSource objectAtIndex:indexPath.row];
-    cell.cityName.text = city.cityName;
-    cell.weatherDiscription.text = city.todayWeather.weatherDescription;
-    cell.minTemp.text = [NSString stringWithFormat:@"%d%@",city.todayWeather.minTemp, kDegreeUC];
-    cell.maxTemp.text = [NSString stringWithFormat:@"%d%@",city.todayWeather.maxTemp, kDegreeUC];
-    cell.currentTemp.text = [NSString stringWithFormat:@"%d%@",city.todayWeather.minTemp, kDegreeUC];
-    
+
+    cell.cityName = city.cityName;
     cell.forecastDataArray = city.forecastArray;
     
     // to refresh table in collectionview cell
@@ -153,6 +166,7 @@
     return cell;
     
 }
+
 -(void)addSomeBorderToCell:(WeatherCell*)cell
 {
     cell.layer.borderColor = [UIColor whiteColor].CGColor;
@@ -233,7 +247,7 @@
         }
     }
 }
-#pragma mark WeatherCell Delegate 
+#pragma mark WeatherCell Delegate
 -(void)removeButtonClicked:(WeatherCell *)cell
 {
     //get the respective indexpath object
@@ -252,32 +266,32 @@
 {
     if ([[WebServiceCommunicator sharedInstance]isNetworkConnection]) {
         [self.activityIndicatorView show:YES];
-
-    [[WebServiceCommunicator sharedInstance]fetchForcastDataForCity:cityNameOrCLLocation andCompletionHandler:^(City *cityObject, NSError *error) {
         
-        if (error == nil) {
+        [[WebServiceCommunicator sharedInstance]fetchForcastDataForCity:cityNameOrCLLocation andCompletionHandler:^(City *cityObject, NSError *error) {
             
-            [self.dataSource addObject:cityObject];
-            [self.weatheCollectionView reloadData];
+            if (error == nil) {
+                
+                [self.dataSource addObject:cityObject];
+                [self.weatheCollectionView reloadData];
+                
+                //move to recent weather demanded
+                NSIndexPath *lastObjectIndexPath = [NSIndexPath indexPathForItem:self.dataSource.count-1 inSection:0];
+                [self.weatheCollectionView scrollToItemAtIndexPath:lastObjectIndexPath atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
+                self.pageIndicator.numberOfPages = self.dataSource.count;
+                self.pageIndicator.currentPage = self.dataSource.count-1;
+                [self.activityIndicatorView hide:YES];
+                
+            }
+            else
+            {
+                [self.activityIndicatorView hide:YES];
+                
+                [[[UIAlertView alloc]initWithTitle:@"Error" message:error.localizedDescription delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil]show];
+                
+            }
             
-            //move to recent weather demanded
-            NSIndexPath *lastObjectIndexPath = [NSIndexPath indexPathForItem:self.dataSource.count-1 inSection:0];
-            [self.weatheCollectionView scrollToItemAtIndexPath:lastObjectIndexPath atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
-            self.pageIndicator.numberOfPages = self.dataSource.count;
-            self.pageIndicator.currentPage = self.dataSource.count-1;
-            [self.activityIndicatorView hide:YES];
-            
-        }
-        else
-        {
-            [self.activityIndicatorView hide:YES];
-            
-            [[[UIAlertView alloc]initWithTitle:@"Error" message:error.localizedDescription delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil]show];
-            
-        }
-        
-    }];
-}
+        }];
+    }
     else
     {
         [[[UIAlertView alloc]

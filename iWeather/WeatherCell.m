@@ -15,6 +15,10 @@
 - (void)awakeFromNib {
     // Initialization code
     self.forecastDataArray = [[NSArray alloc]init];
+    
+
+//    self.forecastTableView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0);
+    self.forecastTableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
 }
 # pragma mark - UITableViewControllerDelegate
 
@@ -38,7 +42,7 @@
     }
     
     Weather *weather = [self.forecastDataArray objectAtIndex:indexPath.row];
-    
+
     cell.dayLabel.text = weather.forecastDate;
     cell.weatherStatus.text = weather.weatherStatus;
     cell.minTemp.text = [NSString stringWithFormat:@"%d%@",weather.minTemp, kDegreeUC];
@@ -50,6 +54,10 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 44.;
+}
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return self.cityName;
 }
 - (IBAction)removeCell:(id)sender {
     
